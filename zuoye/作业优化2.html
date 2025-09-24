@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壁纸大全</title>
+    <style>
+        /* 1. 重置默认样式：消除body默认外边距，解决顶部空白 */
+        
+        * {
+            margin: 0;
+            /* 清除所有元素默认外边距 */
+            padding: 0;
+            /* 清除所有元素默认内边距（可选，避免其他空白） */
+            box-sizing: border-box;
+            /* 统一盒模型，避免宽度计算偏差 */
+        }
+        /* 2. 优化h1样式：去掉固定height，用padding控制上下间距（更灵活） */
+        
+        h1 {
+            color: rgb(240, 1, 224);
+            font: 500 60px "仿宋";
+            text-align: center;
+            padding: 20px 0;
+            /* 上下各20px间距，替代固定height，避免内容溢出 */
+        }
+        /* 3. 用容器包裹壁纸，语义更清晰（替代h2/h3的错误用法） */
+        
+        .wallpaper-group {
+            text-align: center;
+            /* 让图片和文字水平居中 */
+            margin: 30px 0;
+            /* 每组壁纸上下间距，避免拥挤 */
+        }
+        /* 壁纸图片样式：统一大小，添加 hover 效果（提升交互） */
+        
+        .wallpaper-img {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            /* 保持图片比例，避免拉伸变形 */
+            margin: 0 10px;
+            /* 图片之间的间距，替代&nbsp;（更易维护） */
+            cursor: pointer;
+            /* 鼠标悬浮显示“手”，提示可点击 */
+            transition: transform 0.3s;
+            /*  hover 动画过渡，更流畅 */
+        }
+        
+        .wallpaper-img:hover {
+            transform: scale(1.05);
+            /* 鼠标悬浮时图片轻微放大，提升体验 */
+        }
+        /* 壁纸文字链接样式：替代h3，语义更合理 */
+        
+        .wallpaper-link {
+            color: chartreuse;
+            font: 100 24px "仿宋";
+            /* 字体大小从60px缩小，避免过大不协调 */
+            text-decoration: none;
+            /* 去掉链接默认下划线 */
+            margin: 0 20px;
+            /* 链接之间间距 */
+        }
+        
+        .wallpaper-link:hover {
+            color: #aaff00;
+            /*  hover 时颜色加深，提示可点击 */
+            text-decoration: underline;
+            /*  hover 时下划线，增强交互 */
+        }
+        /* 背景样式优化：固定背景，避免滚动时重复 */
+        
+        body {
+            background-image: url("壁纸图片/6.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* 滚动页面时背景固定，体验更好 */
+            min-height: 100vh;
+            /* 保证背景覆盖整个视口高度 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>壁纸大全</h1>
+
+    <!-- 壁纸组1：用div包裹，语义清晰 -->
+    <div class="wallpaper-group">
+        <a href="./壁纸图片/1.jpg"><img src="./壁纸图片/1.jpg" class="wallpaper-img" alt="壁纸1"></a>
+        <a href="./壁纸图片/2.jpg"><img src="./壁纸图片/2.jpg" class="wallpaper-img" alt="壁纸2"></a>
+        <br>
+        <!-- 换行，让文字在图片下方 -->
+        <a href="./壁纸图片/1.jpg" class="wallpaper-link">壁纸1</a>
+        <a href="./壁纸图片/2.jpg" class="wallpaper-link">壁纸2</a>
+    </div>
+
+    <!-- 壁纸组2 -->
+    <div class="wallpaper-group">
+        <a href="./壁纸图片/3.jpg"><img src="./壁纸图片/3.jpg" class="wallpaper-img" alt="壁纸3"></a>
+        <a href="./壁纸图片/4.jpg"><img src="./壁纸图片/4.jpg" class="wallpaper-img" alt="壁纸4"></a>
+        <br>
+        <a href="./壁纸图片/3.jpg" class="wallpaper-link">壁纸3</a>
+        <a href="./壁纸图片/4.jpg" class="wallpaper-link">壁纸4</a>
+    </div>
+
+    <!-- 壁纸组3 -->
+    <div class="wallpaper-group">
+        <a href="./壁纸图片/5.jpg"><img src="./壁纸图片/5.jpg" class="wallpaper-img" alt="壁纸5"></a>
+        <a href="./壁纸图片/6.jpg"><img src="./壁纸图片/6.jpg" class="wallpaper-img" alt="壁纸6"></a>
+        <br>
+        <a href="./壁纸图片/5.jpg" class="wallpaper-link">壁纸5</a>
+        <a href="./壁纸图片/6.jpg" class="wallpaper-link">壁纸6</a>
+    </div>
+
+    <!-- 壁纸组4 -->
+    <div class="wallpaper-group">
+        <a href="./壁纸图片/7.jpg"><img src="./壁纸图片/7.jpg" class="wallpaper-img" alt="壁纸7"></a>
+        <a href="./壁纸图片/8.jpg"><img src="./壁纸图片/8.jpg" class="wallpaper-img" alt="壁纸8"></a>
+        <br>
+        <a href="./壁纸图片/7.jpg" class="wallpaper-link">壁纸7</a>
+        <a href="./壁纸图片/8.jpg" class="wallpaper-link">壁纸8</a>
+    </div>
+</body>
+
+</html>
